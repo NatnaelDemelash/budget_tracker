@@ -8,3 +8,11 @@ body {
   font-family: "Roboto Mono", monospace;
   background-color: #f8f9f9;
 }
+
+.bg-normal {
+  background-color: #16a085;
+}
+
+.bg-warning {
+  background-color: #cd6155;
+}

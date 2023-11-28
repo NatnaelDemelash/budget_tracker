@@ -18,6 +18,9 @@ function AddExpense() {
     };
 
     dispatch({ type: "ADD_EXPENSE", payload: newExpense });
+
+    setName("");
+    setCost("");
   };
 
   return (
