@@ -1,14 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import AllExpenses from "./AllExpenses";
 
-const expenses = [
-  { id: 1, name: "Shpping", cost: 30 },
-  { id: 2, name: "Holiday", cost: 400 },
-  { id: 3, name: "Transportaion", cost: 2300 },
-  { id: 4, name: "Fuel", cost: 800 },
-];
+import { AppContext } from "../context/AppContext";
 
 function ExpenseLists() {
+  const { expenses } = useContext(AppContext);
+
   return (
     <div className="w-full px-10 sm:max-w-[1300px] mx-auto">
       <h1 className="text-2xl font-bold my-6">Expenses</h1>
