@@ -14,8 +14,8 @@ function App() {
       <NavBar />
       <div className="flex flex-col px-8 md:flex-row md:justify-evenly items-center">
         <Budget />
-        <Remaining />
         <Spend />
+        <Remaining />
       </div>
       <ExpenseLists />
       <AddExpense />
