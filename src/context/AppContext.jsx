@@ -1,7 +1,7 @@
 import { createContext, useReducer, useState } from "react";
 
 const initialState = {
-  budget: 4500,
+  budget: 5000,
   expenses: [
     { id: 11, name: "Groceries", cost: 250 },
     { id: 12, name: "Entertaiment", cost: 500 },

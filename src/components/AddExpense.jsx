@@ -24,7 +24,7 @@ function AddExpense() {
   };
 
   return (
-    <div className="md:max-w-[1300px] mx-auto">
+    <div className="pb-20 dark:bg-[#273746] md:max-w-[1300px] mx-auto">
       <h1 className="px-8 text-2xl font-bold mt-8">Add Expense</h1>
       <form
         onSubmit={addExpense}

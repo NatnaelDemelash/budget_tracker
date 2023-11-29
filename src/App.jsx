@@ -11,7 +11,7 @@ import { AppProvider } from "./context/AppContext";
 function App() {
   return (
     <AppProvider>
-      <div className="dark:h-screen dark:bg-[#273746] dark:text-white">
+      <div className="h-screen dark:bg-[#273746] dark:text-white">
         <NavBar />
         <div className="flex flex-col px-8 md:flex-row md:justify-evenly items-center">
           <Budget />
