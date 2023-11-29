@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import logo from "../assets/logo.png";
 import { MdLightMode } from "react-icons/md";
+import { MdDarkMode } from "react-icons/md";
+import { AppContext } from "../context/AppContext";
 
 function NavBar() {
+  const { theme, setTheme } = useContext(AppContext);
+
+  useEffect(() => {
+    if (theme == "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+
+  const handleThemeToggle = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
   return (
-    <div className="h-15 w-full shadow-sm flex justify-between items-center py-6 px-12">
+    <div className="h-15 w-full shadow-sm dark:shadow-md flex justify-between items-center py-6 px-12">
       <div className="flex gap-1 items-center">
         <img src={logo} alt="Logo" width={50} />
         <h1 className="text-xl">Budget Tracker</h1>
@@ -12,7 +28,11 @@ function NavBar() {
 
       <div className="flex items-center gap-10">
         <div className="cursor-pointer">
-          <MdLightMode size={24} />
+          {theme === "dark" ? (
+            <MdLightMode size={24} onClick={handleThemeToggle} />
+          ) : (
+            <MdDarkMode size={24} onClick={handleThemeToggle} />
+          )}
         </div>
         <nav>
           <ul>

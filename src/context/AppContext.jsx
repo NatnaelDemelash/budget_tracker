@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useReducer, useState } from "react";
 
 const initialState = {
   budget: 4500,
@@ -33,6 +33,7 @@ export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
+  const [theme, setTheme] = useState("light");
 
   return (
     <AppContext.Provider
@@ -40,6 +41,8 @@ export const AppProvider = ({ children }) => {
         budget: state.budget,
         expenses: state.expenses,
         dispatch,
+        theme,
+        setTheme,
       }}
     >
       {children}
